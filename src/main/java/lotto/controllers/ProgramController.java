@@ -28,7 +28,7 @@ public class ProgramController {
 	}
 
 	private void printMyLottos() {
-
+		Ui.printPurchaseResult(myLottos.getMyLottos());
 	}
 
 	private void requestWinningNumbers() {

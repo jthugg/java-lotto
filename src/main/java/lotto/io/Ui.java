@@ -1,5 +1,7 @@
 package lotto.io;
 
+import java.util.List;
+
 public enum Ui {
 
 	PURCHASE_AMOUNT_REQUEST("구입금액을 입력해 주세요."),
@@ -24,5 +26,12 @@ public enum Ui {
 
 	public static void printPurchaseAmountRequest() {
 		System.out.println(PURCHASE_AMOUNT_REQUEST.value);
+	}
+
+	public static void printPurchaseResult(List<List<Integer>> purchasedLottos) {
+		System.out.println(purchasedLottos.size() + PURCHASE_RESULT.value);
+		for(List<Integer> numbers : purchasedLottos) {
+			System.out.println(numbers);
+		}
 	}
 }

@@ -17,4 +17,8 @@ public class MyLottos {
 			myNumbers.add(Randoms.pickUniqueNumbersInRange(1, 45, 6));
 		}
 	}
+
+	public List<List<Integer>> getMyLottos() {
+		return myNumbers;
+	}
 }
