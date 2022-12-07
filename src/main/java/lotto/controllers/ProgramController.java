@@ -1,18 +1,17 @@
 package lotto.controllers;
 
+import lotto.data.Lotto;
 import lotto.data.MyLottos;
-import lotto.data.WinningNumbers;
 import lotto.io.Ui;
 import lotto.io.UserInput;
 
 public class ProgramController {
 
 	MyLottos myLottos = new MyLottos();
-	WinningNumbers winningNumbers = new WinningNumbers();
+	Lotto winningNumbers;
 
 	public void runProgram() {
 		requestPurchaseAmount();
-		purchaseLottos();
 		printMyLottos();
 		requestWinningNumbers();
 		requestBonusNumber();
@@ -21,11 +20,11 @@ public class ProgramController {
 
 	private void requestPurchaseAmount() {
 		Ui.printPurchaseAmountRequest();
-		myLottos.purchase(UserInput.requestPurchaseAmount());
+		purchaseLottos(UserInput.requestPurchaseAmount());
 	}
 
-	private void purchaseLottos() {
-
+	private void purchaseLottos(int purchaseAmount) {
+		myLottos.purchase(purchaseAmount);
 	}
 
 	private void printMyLottos() {
