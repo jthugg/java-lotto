@@ -21,4 +21,8 @@ public enum Ui {
 	Ui(String value) {
 		this.value = value;
 	}
+
+	public static void printPurchaseAmountRequest() {
+		System.out.println(PURCHASE_AMOUNT_REQUEST.value);
+	}
 }
