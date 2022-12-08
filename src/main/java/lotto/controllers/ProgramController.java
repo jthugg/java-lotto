@@ -5,11 +5,14 @@ import lotto.data.Lotto;
 import lotto.data.MyLottos;
 import lotto.io.Ui;
 import lotto.io.UserInput;
+import lotto.data.Portfolios;
+import lotto.utils.ProfitCarculator;
 
 public class ProgramController {
 
 	MyLottos myLottos = new MyLottos();
 	Lotto lotto;
+	Portfolios portfolios = new Portfolios();
 
 	public void runProgram() {
 		requestPurchaseAmount();
@@ -43,6 +46,11 @@ public class ProgramController {
 	}
 
 	private void printResult() {
-
+		portfolios.compare(myLottos.getMyLottos(), lotto.getLottos(), lotto.getBonusNumber());
+		Ui.printCompareResult(portfolios
+						.getPortfolios(),
+				ProfitCarculator
+						.getProfits(portfolios.getPortfolios(),
+								myLottos.getMyLottos().size() * 1000));
 	}
 }

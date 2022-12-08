@@ -45,11 +45,11 @@ public enum Ui {
 
 	public static void printCompareResult(List<Integer> rankCount, double profit) {
 		System.out.println(RESULT_HEADER.value);
-		System.out.println(FIFTH.value + rankCount.get(0) + COUNTER_UNIT);
-		System.out.println(FOURTH.value + rankCount.get(1) + COUNTER_UNIT);
-		System.out.println(THIRD.value + rankCount.get(2) + COUNTER_UNIT);
-		System.out.println(SECOND.value + rankCount.get(3) + COUNTER_UNIT);
-		System.out.println(WIN.value + rankCount.get(4) + COUNTER_UNIT);
+		System.out.println(FIFTH.value + rankCount.get(0) + COUNTER_UNIT.value);
+		System.out.println(FOURTH.value + rankCount.get(1) + COUNTER_UNIT.value);
+		System.out.println(THIRD.value + rankCount.get(2) + COUNTER_UNIT.value);
+		System.out.println(SECOND.value + rankCount.get(3) + COUNTER_UNIT.value);
+		System.out.println(WIN.value + rankCount.get(4) + COUNTER_UNIT.value);
 		System.out.println(PORTFOLIO_HEADER.value + profit + PORTFOLIO_FOOTER.value);
 	}
 }
