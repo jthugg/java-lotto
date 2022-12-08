@@ -1,5 +1,6 @@
 package lotto.controllers;
 
+import java.util.List;
 import lotto.data.Lotto;
 import lotto.data.MyLottos;
 import lotto.io.Ui;
@@ -14,7 +15,6 @@ public class ProgramController {
 		requestPurchaseAmount();
 		printMyLottos();
 		requestWinningNumbers();
-		requestBonusNumber();
 		printResult();
 	}
 
@@ -32,10 +32,11 @@ public class ProgramController {
 	}
 
 	private void requestWinningNumbers() {
-
+		Ui.printWinningNumberRequest();
+		requestBonusNumber(UserInput.requestWinningNumbers());
 	}
 
-	private void requestBonusNumber() {
+	private void requestBonusNumber(List<Integer> winningNumbers) {
 
 	}
 

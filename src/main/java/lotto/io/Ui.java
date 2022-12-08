@@ -14,7 +14,7 @@ public enum Ui {
 	THIRD("5개 일치 (1,500,000원) - "),
 	SECOND("5개 일치, 보너스 볼 일치 (30,000,000원) - "),
 	WIN("6개 일치 (2,000,000,000원) - "),
-	COUNTER("개"),
+	COUNTER_UNIT("개"),
 	PORTFOLIO_HEADER("총 수익률은 "),
 	PORTFOLIO_FOOTER("%입니다.");
 
@@ -33,5 +33,23 @@ public enum Ui {
 		for(List<Integer> numbers : purchasedLottos) {
 			System.out.println(numbers);
 		}
+	}
+
+	public static void printWinningNumberRequest() {
+		System.out.println(WINNING_NUMBER_REQUEST.value);
+	}
+
+	public static void printBonusNumberRequest() {
+		System.out.println(BONUS_NUMBER_REQUEST.value);
+	}
+
+	public static void printCompareResult(List<Integer> rankCount, double profit) {
+		System.out.println(RESULT_HEADER.value);
+		System.out.println(FIFTH.value + rankCount.get(0) + COUNTER_UNIT);
+		System.out.println(FOURTH.value + rankCount.get(1) + COUNTER_UNIT);
+		System.out.println(THIRD.value + rankCount.get(2) + COUNTER_UNIT);
+		System.out.println(SECOND.value + rankCount.get(3) + COUNTER_UNIT);
+		System.out.println(WIN.value + rankCount.get(4) + COUNTER_UNIT);
+		System.out.println(PORTFOLIO_HEADER.value + profit + PORTFOLIO_FOOTER.value);
 	}
 }
