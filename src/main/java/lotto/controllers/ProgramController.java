@@ -9,7 +9,7 @@ import lotto.io.UserInput;
 public class ProgramController {
 
 	MyLottos myLottos = new MyLottos();
-	Lotto winningNumbers;
+	Lotto lotto;
 
 	public void runProgram() {
 		requestPurchaseAmount();
@@ -37,7 +37,9 @@ public class ProgramController {
 	}
 
 	private void requestBonusNumber(List<Integer> winningNumbers) {
-
+		Ui.printBonusNumberRequest();
+		winningNumbers.add(UserInput.requestBonusNumber(winningNumbers));
+		lotto = new Lotto(winningNumbers);
 	}
 
 	private void printResult() {

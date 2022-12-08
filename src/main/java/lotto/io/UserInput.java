@@ -14,4 +14,8 @@ public class UserInput {
 	public static List<Integer> requestWinningNumbers() {
 		return Validator.validateWinningNumbers(Arrays.asList(Console.readLine().split(",")));
 	}
+
+	public static Integer requestBonusNumber(List<Integer> winningNumbers) {
+		return Validator.validateBonusNumber(winningNumbers, Console.readLine());
+	}
 }
