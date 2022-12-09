@@ -1,6 +1,8 @@
 package lotto.io;
 
+import java.math.BigDecimal;
 import java.util.List;
+import lotto.utils.Formatter;
 
 public enum Ui {
 
@@ -50,6 +52,6 @@ public enum Ui {
 		System.out.println(THIRD.value + rankCount.get(2) + COUNTER_UNIT.value);
 		System.out.println(SECOND.value + rankCount.get(3) + COUNTER_UNIT.value);
 		System.out.println(WIN.value + rankCount.get(4) + COUNTER_UNIT.value);
-		System.out.println(PORTFOLIO_HEADER.value + profit + PORTFOLIO_FOOTER.value);
+		System.out.println(PORTFOLIO_HEADER.value + Formatter.format(profit) + PORTFOLIO_FOOTER.value);
 	}
 }

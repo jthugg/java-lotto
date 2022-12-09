@@ -6,6 +6,7 @@ import lotto.data.MyLottos;
 import lotto.io.Ui;
 import lotto.io.UserInput;
 import lotto.data.Portfolios;
+import lotto.utils.Formatter;
 import lotto.utils.ProfitCarculator;
 
 public class ProgramController {
