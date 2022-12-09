@@ -30,14 +30,14 @@ public enum Validator {
 	}
 
 	public static int validateIsNumbers(String userInput) {
-		if(!Pattern.matches(IS_NUMBERS_REGEX.value, userInput)) {
+		if (!Pattern.matches(IS_NUMBERS_REGEX.value, userInput)) {
 			throw new IllegalArgumentException(ErrorMessages.PURCHASE_PRICE_ERROR);
 		}
 		return validateRange(Integer.parseInt(userInput));
 	}
 
 	private static int validateRange(int userInput) {
-		if(userInput > MAX_PURCHASE_PRICE.numbers ||
+		if (userInput > MAX_PURCHASE_PRICE.numbers ||
 				userInput < MIN_PURCHASE_PRICE.numbers ||
 				userInput % MIN_PURCHASE_PRICE.numbers != ZERO.numbers) {
 			throw new IllegalArgumentException(ErrorMessages.PURCHASE_PRICE_ERROR);
@@ -56,15 +56,15 @@ public enum Validator {
 	}
 
 	private static List<Integer> checkLength(List<Integer> winningNumbers) {
-		if(winningNumbers.size() != WINNING_NUMBERS_LENGTH.numbers) {
+		if (winningNumbers.size() != WINNING_NUMBERS_LENGTH.numbers) {
 			throw new IllegalArgumentException(ErrorMessages.LENGTH_ERROR);
 		}
 		return checkEachNumber(winningNumbers);
 	}
 
 	private static List<Integer> checkEachNumber(List<Integer> winningNumbers) {
-		for(int number : winningNumbers) {
-			if(number > MAX_LOTTO_NUMBER.numbers || number < MIN_LOTTO_NUMBER.numbers) {
+		for (int number : winningNumbers) {
+			if (number > MAX_LOTTO_NUMBER.numbers || number < MIN_LOTTO_NUMBER.numbers) {
 				throw new IllegalArgumentException(ErrorMessages.NOT_IN_RANGE_ERROR);
 			}
 		}
@@ -73,7 +73,7 @@ public enum Validator {
 
 	private static List<Integer> checkDuplication(List<Integer> winningNumbers) {
 		Set<Integer> numbers = new TreeSet<>(winningNumbers);
-		if(numbers.size() != WINNING_NUMBERS_LENGTH.numbers) {
+		if (numbers.size() != WINNING_NUMBERS_LENGTH.numbers) {
 			throw new IllegalArgumentException(ErrorMessages.DUPLICATED_NUMBER_ERROR);
 		}
 		return new ArrayList<>(numbers);
@@ -81,7 +81,7 @@ public enum Validator {
 
 	public static Integer validateBonusNumber(List<Integer> winningNumbers, String bonusNumber) {
 		try {
-			if(winningNumbers.contains(Integer.parseInt(bonusNumber))) {
+			if (winningNumbers.contains(Integer.parseInt(bonusNumber))) {
 				throw new IllegalArgumentException(ErrorMessages.DUPLICATED_NUMBER_ERROR);
 			}
 			return checkBonusNumberRange(Integer.parseInt(bonusNumber));
@@ -91,7 +91,7 @@ public enum Validator {
 	}
 
 	private static Integer checkBonusNumberRange(int bonusNumber) {
-		if(bonusNumber > MAX_LOTTO_NUMBER.numbers || bonusNumber < MIN_LOTTO_NUMBER.numbers) {
+		if (bonusNumber > MAX_LOTTO_NUMBER.numbers || bonusNumber < MIN_LOTTO_NUMBER.numbers) {
 			throw new IllegalArgumentException(ErrorMessages.NOT_IN_RANGE_ERROR);
 		}
 		return bonusNumber;

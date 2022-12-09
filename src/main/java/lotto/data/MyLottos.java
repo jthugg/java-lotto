@@ -7,14 +7,14 @@ import java.util.List;
 
 public class MyLottos {
 
-	private List<List<Integer>> myNumbers;
+	private final List<List<Integer>> myNumbers;
 
 	public MyLottos() {
 		myNumbers = new ArrayList<>();
 	}
 
 	public void purchase(int purchaseAmount) {
-		for(int count = 0; count < purchaseAmount; count++) {
+		for (int count = 0; count < purchaseAmount; count++) {
 			List<Integer> generatedNumbers =
 					sortNumbers(Randoms.pickUniqueNumbersInRange(1, 45, 6));
 			myNumbers.add(generatedNumbers);

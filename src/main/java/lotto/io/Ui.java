@@ -18,7 +18,7 @@ public enum Ui {
 	PORTFOLIO_HEADER("총 수익률은 "),
 	PORTFOLIO_FOOTER("%입니다.");
 
-	private String value;
+	private final String value;
 
 	Ui(String value) {
 		this.value = value;
@@ -30,7 +30,7 @@ public enum Ui {
 
 	public static void printPurchaseResult(List<List<Integer>> purchasedLottos) {
 		System.out.println(purchasedLottos.size() + PURCHASE_RESULT.value);
-		for(List<Integer> numbers : purchasedLottos) {
+		for (List<Integer> numbers : purchasedLottos) {
 			System.out.println(numbers);
 		}
 	}

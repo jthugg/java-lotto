@@ -24,6 +24,4 @@ public class Lotto {
 	public int getBonusNumber() {
 		return numbers.get(6);
 	}
-
-	// TODO: 추가 기능 구현
 }
