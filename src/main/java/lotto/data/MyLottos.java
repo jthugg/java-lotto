@@ -2,6 +2,7 @@ package lotto.data;
 
 import camp.nextstep.edu.missionutils.Randoms;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class MyLottos {
@@ -14,8 +15,16 @@ public class MyLottos {
 
 	public void purchase(int purchaseAmount) {
 		for(int count = 0; count < purchaseAmount; count++) {
-			myNumbers.add(Randoms.pickUniqueNumbersInRange(1, 45, 6));
+			List<Integer> generatedNumbers =
+					sortNumbers(Randoms.pickUniqueNumbersInRange(1, 45, 6));
+			myNumbers.add(generatedNumbers);
 		}
+	}
+
+	private List<Integer> sortNumbers(List<Integer> generatedNumbers) {
+		List<Integer> numbers = new ArrayList<>(generatedNumbers);
+		Collections.sort(numbers);
+		return numbers;
 	}
 
 	public List<List<Integer>> getMyLottos() {

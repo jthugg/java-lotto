@@ -47,10 +47,8 @@ public class ProgramController {
 
 	private void printResult() {
 		portfolios.compare(myLottos.getMyLottos(), lotto.getLottos(), lotto.getBonusNumber());
-		Ui.printCompareResult(portfolios
-						.getPortfolios(),
-				ProfitCarculator
-						.getProfits(portfolios.getPortfolios(),
+		Ui.printCompareResult(portfolios.getPortfolios(),
+				ProfitCarculator.getProfits(portfolios.getPortfolios(),
 								myLottos.getMyLottos().size() * 1000));
 	}
 }
